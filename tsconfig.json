@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "resolveJsonModule": true, //evita error lectura de archivo.json
+    "esModuleInterop": true, //evita error lectura de archivo.json
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
