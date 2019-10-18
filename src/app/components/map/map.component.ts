@@ -1,8 +1,9 @@
 import { environment } from '../../../environments/environment';
-import { Component, OnInit } from '@angular/core';
+import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { ProvideStoresService } from '../../services/provide-stores.service';
+import { Store } from 'src/app/models/store';
 
 @Component({
   selector: 'app-map',
@@ -16,7 +17,9 @@ export class MapComponent implements OnInit {
   lng = -122.41;
 
   constructor(
-    private provideStoresService: ProvideStoresService
+    private provideStoresService: ProvideStoresService,
+    private renderer: Renderer2,
+    private el: ElementRef
   ) { }
 
   ngOnInit() {
@@ -27,15 +30,17 @@ export class MapComponent implements OnInit {
       zoom: 13, // Starting zoom level
       center: [this.lng, this.lat] // Starting position [lng, lat]
     });
-    this.map.addControl(new mapboxgl.NavigationControl()); // Add zoom and rotation controls to the map.
-
-    this.map.addControl(new MapboxGeocoder({
+    this.map.addControl(new MapboxGeocoder({ // Search
       accessToken: mapboxgl.accessToken,
       mapboxgl,
       }));
-
-    // this.provideStoresService;
+    this.map.addControl(new mapboxgl.NavigationControl()); // Add zoom and rotation controls to the map.
     this.markerStores();
+
+    // this.map.on('click', (e) => {
+    //   console.log('map.on: ', e);
+    //   console.log('lngLat: ', e.lngLat);
+    // });
   }
 
   markerStores() {
@@ -43,10 +48,22 @@ export class MapComponent implements OnInit {
     console.log('stores: ', stores);
 
     for (let i = 0; i < stores.length; i++) {
-      console.log('store[', i , ']: ', stores[i]);
-      console.log('store[', i , '].Coordinates.lat: ', stores[i].Coordinates.lat);
-      console.log('store[', i , '].Coordinates.lng: ', stores[i].Coordinates.lng);
-      const marker = new mapboxgl.Marker() // initialize a new marker
+      const el = this.renderer.createElement('div');
+      el.className = 'marker';
+      el.addEventListener('click', () => {
+        console.log(stores[i].Name);
+        const favorite: Store = {
+          Name: stores[i].Name,
+          Address: stores[i].Address,
+          Coordinates: {
+            lat: stores[i].Coordinates.lat,
+            lng: stores[i].Coordinates.lng
+          }
+        };
+        this.provideStoresService.favorites.push(favorite);
+        console.log('this.provideStoresService.favorites: ', this.provideStoresService.favorites);
+      });
+      const marker = new mapboxgl.Marker(el) // initialize a new marker
       .setLngLat([stores[i].Coordinates.lng, stores[i].Coordinates.lat]) // Marker [lng, lat] coordinates
       .addTo(this.map); // Add the marker to the map
     }

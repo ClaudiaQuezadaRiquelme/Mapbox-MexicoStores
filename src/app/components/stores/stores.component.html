@@ -1,0 +1,8 @@
+<h3>Tiendas Favoritas</h3>
+<table>
+    <tbody id="favoriteStores">
+      <tr *ngFor = 'let item of favoriteStores'>
+        <td (click)="isNotMyFavorite(item.Name)">{{item.Name}}</td>
+      </tr>
+    </tbody>
+  </table>

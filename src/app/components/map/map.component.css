@@ -1,4 +1,22 @@
 .match-parent {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
   }
+
+.marker {
+  /* background-color: blueviolet; */
+  background-image: url('http://placekitten.com/g/27/27');
+  width: 27px;
+  height: 27px;
+  background-position: center;
+}
+
+#map { 
+  position: absolute; 
+  top:0; 
+  bottom:0; 
+  width:550px; 
+  height: 100%;
+  /* z-index: -1; */
+  /* width: 400px; height: 300px; */
+}
