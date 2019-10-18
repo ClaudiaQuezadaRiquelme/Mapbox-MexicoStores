@@ -37,10 +37,22 @@ export class MapComponent implements OnInit {
     this.map.addControl(new mapboxgl.NavigationControl()); // Add zoom and rotation controls to the map.
     this.markerStores();
 
+    // Este código fue utilizado para buscar las coordenadas para centrar el mapa
+    // con el botón "ir a Ciudad de México"
     // this.map.on('click', (e) => {
     //   console.log('map.on: ', e);
     //   console.log('lngLat: ', e.lngLat);
     // });
+  }
+
+  goToMexicoCity() {
+    this.map.fitBounds([[
+      -99.13379765900974,
+      19.58881802987723
+      ], [
+      -99.13379765900974,
+      19.052188965899703
+      ]]);
   }
 
   markerStores() {
