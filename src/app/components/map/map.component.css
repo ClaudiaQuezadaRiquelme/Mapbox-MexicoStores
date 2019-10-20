@@ -4,10 +4,10 @@
   }
 
 .marker {
-  /* background-color: blueviolet; */
   background-image: url('http://placekitten.com/g/27/27');
   width: 27px;
   height: 27px;
+  border-radius: 50%;
   background-position: center;
 }
 
@@ -18,7 +18,6 @@
   width:550px; 
   height: 100%;
   /* z-index: -1; */
-  /* width: 400px; height: 300px; */
 }
 
 #fit {
@@ -34,4 +33,5 @@
   text-align: center;
   color: #fff;
   background: #ee8a65;
+  font-family: 'Roboto', sans-serif;
 }

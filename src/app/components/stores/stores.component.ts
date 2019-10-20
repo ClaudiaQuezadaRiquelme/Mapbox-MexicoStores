@@ -18,8 +18,7 @@ export class StoresComponent implements OnInit {
   }
 
   isNotMyFavorite(store) {
-    console.log('isNotMyFavorite() works');
-    console.log('is not my favorite anymore: ', store);
+    console.log('it is not my favorite anymore: ', store);
     for (let i = (this.favoriteStores.length - 1); i >= 0; i--) {
       if (this.favoriteStores[i].Name === store) {
         this.favoriteStores.splice(i, 1);

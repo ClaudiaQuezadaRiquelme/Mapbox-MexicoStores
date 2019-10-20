@@ -1,3 +1,17 @@
 td:hover {
     color: red;
 }
+
+#tableName {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+#favoriteStores, #tableName {
+    font-family: 'Roboto', sans-serif;
+    margin-left: 15px;
+}
+
+.storeName {
+    padding-inline-start: 15px;
+}

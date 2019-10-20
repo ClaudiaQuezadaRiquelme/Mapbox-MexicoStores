@@ -1,5 +1,17 @@
 .mapContainer {
-    /* position: relative; */
-    width:550px; 
-    height: 100%;
-  }
+  /* position: relative; */
+  width:550px; 
+  height: 100%;
+}
+
+.favoriteContainer {
+  background-color: #ee8a65;
+  vertical-align: top;
+  margin-top: 0;
+  width:550px;
+  min-height: 100vh;
+}
+
+.tableOfFavorites {
+  min-height: 100vh;
+}
