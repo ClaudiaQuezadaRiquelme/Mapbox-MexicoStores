@@ -72,7 +72,7 @@ export class MapComponent implements OnInit {
             lng: stores[i].Coordinates.lng
           }
         };
-        this.provideStoresService.favorites.push(favorite);
+        this.provideStoresService.saveFavoriteStore(favorite);
         console.log('this.provideStoresService.favorites: ', this.provideStoresService.favorites);
       });
       const marker = new mapboxgl.Marker(el) // initialize a new marker
