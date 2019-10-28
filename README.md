@@ -40,9 +40,9 @@ Y como se mencionó anteriormente, en lugar de presionar sobre el botón 'Ir a C
 
 ## Historias de Usuario
 
-**HU1:** Como estudiante, quiero ver un mapa de Ciudad de México.
-**HU2:** Como estudiante, quiero ver un mapa que muestre todas las tiendas representadas como markers/pins en el mapa.
-**HU3:** Como estudiante, quiero poder hacer click sobre un marker de tienda y añadirlo a una lista de Tiendas Favoritas.
-**HU4:** Como estudiante, quiero poder hacer click sobre una tienda en la lista de Tiendas Favoritas y removerla de la lista.
+- **HU1:** Como estudiante, quiero ver un mapa de Ciudad de México.
+- **HU2:** Como estudiante, quiero ver un mapa que muestre todas las tiendas representadas como markers/pins en el mapa.
+- **HU3:** Como estudiante, quiero poder hacer click sobre un marker de tienda y añadirlo a una lista de Tiendas Favoritas.
+- **HU4:** Como estudiante, quiero poder hacer click sobre una tienda en la lista de Tiendas Favoritas y removerla de la lista.
 
-## [Haz click para ver el Proyecto](https://mapbox-mexico-stores.herokuapp.com/)
+### [Haz click para ver el Proyecto](https://mapbox-mexico-stores.herokuapp.com/)
